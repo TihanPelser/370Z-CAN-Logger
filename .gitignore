@@ -1,0 +1,39 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.env
+*.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Arduino
+*.hex
+*.elf
+
+# Excel
+*.xlsx
+
+# Lock files
+*.lock
+
+# Shell scripts
+*.sh~
+
+# Miscellaneous
+*.swp
+*.swo
