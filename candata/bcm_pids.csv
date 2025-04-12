@@ -1,0 +1,130 @@
+PID,Bytes,A,B,C,D,Description,Parameters
+00,4.0,0D,E7,92,51,PIDs supported [01 - 20],Bit encoded [A7..D0] = [PID 01..PID 20]
+01,,,,,,,
+02,,,,,,,
+03,,,,,,,
+04,,,,,,,
+05,,,,00,,Door Locks,"01: All Lock, 02: All Unlock, 03: Unlock driver, 04: Unlock passenger, 05: Nothing"
+06,,,,00,,,00-05
+07,,,,,,,
+08,,,,20,,Door Chime,"00: Off, 01: On, Creates a solid, high pitched tone from under the hood"
+09,,,,20,,Key Beep,"00: Off, 01: Fast beeping, 02: Burst of 2 beeps, 03: Bursts of 4 beeps, quiet tones from by the steering wheel"
+0A,,,,20,,Key Warning Light,"00: Off, 01: On Solid, 02: Blinking, Key light on dashboard"
+0B,,,,20,,Rear defroster,"00: Off, 01: On"
+0C,,,,,,,
+0D,,,,,,,
+0E,,,,20,,Key beep,"00: Off, 01: 4 beep bursts"
+0F,,,,20,,Key beep,"00: Off, 01: 1 beep very slowly"
+10,,,,20,,Key beep,"00: Off, 01: constant tone"
+11,,,,20,,Key beep,"00: Off, 01: constant tone"
+12,,,,,,,
+13,,,,,,,
+14,,,,20,,Pressure Warning Light,"00: Off, 01: On"
+15,,,,,,,
+16,,,,,,,
+17,,,,20,,Map Light,"00: Off, 01: On"
+18,,,,,,,
+19,,,,,,,
+1A,,,,20,,Interior Light/Kickplate,"00: Disabled, 01: Enabled"
+1B,,,,,,,
+1C,,,,20,,Info Screen,"00: Normal, 01-08: Various info/warning screens, some with a brief tone and yellow triangle warning light"
+1D,,,,,,,
+1E,,,,,,,
+1F,,,,,,,
+20,4.0,F4,37,80,6F,PIDs supported [21 - 40],Bit encoded [A7..D0] = [PID 21..PID 40]
+21,,,,20,,Red key in a car warning light,
+22,,,,00,,Panic Horn,"00: Off, 01: One panic horn burst"
+23,,,,00,,Headlights,"00: Off, 01: Both headlights on briefly"
+24,,,,00,,Trunk Open,"00: Off, 01: Open trunk"
+25,,,,,,,
+26,,,,00,,Trunk Open,"00: Off, 01: Open trunk"
+27,,,,,,,
+28,,,,,,,
+29,,,,,,,
+2A,,,,,,,
+2B,,,,20,,,00-01
+2C,,,,20,,Luggage Lamp,"0: Off, 1: On, light in back of trunk"
+2D,,,,,,,
+2E,,,,20,,,00-01
+2F,,,,20,,Blinkers,"0: Off, 1: Right, 2: Left"
+30,,,,00,,Lock Horn,"0: Off, 1: On, brief honk, like when you lock your doors"
+31,,,,20,,,00-01
+32,,,,,,,
+33,,,,,,,
+34,,,,,,,
+35,,,,,,,
+36,,,,,,,
+37,,,,,,,
+38,,,,,,,
+39,,,,,,,
+3A,,,,20,,Running Lights,"0: Off, 1: On, front and back running lights"
+3B,,,,20,,Headlights,"0: Off, 1: Headlights On, 2: Brights On"
+3C,,,,,,,
+3D,,,,20,,,00-01
+3E,,,,20,,,00-01
+3F,,,,20,,,00-01
+40,4.0,68,0F,E0,01,PIDs supported [41 - 60],Bit encoded [A7..D0] = [PID 41..PID 60]
+41,,,,,,,
+42,,,,20,,,00-02
+43,,,,20,,,00-01
+44,,,,,,,
+45,,,,20,,Front Wipers,"00: Off, 01: High, 02: Low, 03: Intermittant"
+46,,,,,,,
+47,,,,,,,
+48,,,,,,,
+49,,,,,,,
+4A,,,,,,,
+4B,,,,,,,
+4C,,,,,,,
+4D,,,,20,,,00-01
+4E,,,,20,,Key Antenna?,"00: No Key, 01: Key"
+4F,,,,20,,Ignition START Light,"00: Off, 01: On"
+50,,,,20,,Ignition LOCK Light,"00: Off, 01: On"
+51,,,,20,,Ignition ACC Light,"00: Off, 01: On"
+52,,,,20,,Ignition ON Light,"00: Off, 01: On"
+53,,,,20,,Key Slot Light,"00: Off, 01: On"
+54,,,,,,,
+55,,,,,,,
+56,,,,,,,
+57,,,,,,,
+58,,,,,,,
+59,,,,,,,
+5A,,,,,,,
+5B,,,,,,,
+5C,,,,,,,
+5D,,,,,,,
+5E,,,,,,,
+5F,,,,,,,
+60,4.0,00,00,13,FA,PIDs supported [61 - 80],Bit encoded [A7..D0] = [PID 61..PID 80]
+61,,,,,,,
+62,,,,,,,
+63,,,,,,,
+64,,,,,,,
+65,,,,,,,
+66,,,,,,,
+67,,,,,,,
+68,,,,,,,
+69,,,,,,,
+6A,,,,,,,
+6B,,,,,,,
+6C,,,,,,,
+6D,,,,,,,
+6E,,,,,,,
+6F,,,,,,,
+70,,,,,,,
+71,,,,,,,
+72,,,,,,,
+73,,,,,,,
+74,,,,00,,,00-02
+75,,,,,,,
+76,,,,,,,
+77,,,,20,,Check Oil Light,"00: Off, 01: On"
+78,,,,20,,,00-01
+79,,,,20,,ACC Relay,"00: Off, 01: On"
+7A,,,,20,,,00-01
+7B,,,,20,,ON Relay,"00: Off, 01: On"
+7C,,,,20,,,00-01
+7D,,,,,,,
+7E,,,,,,,
+7F,,,,,,,
+80,,,,,,,

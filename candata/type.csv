@@ -1,0 +1,13 @@
+CAN System Type ,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8
+Body type,Coupe,,,,Roadster,,,
+Axle,2WD,,,,,,,
+Engine,VQ37VHR,,,,,,,
+Transmission,M/T,,A/T,,M/T,,A/T,
+Brake control,VDC,,,,,,,
+Navigation system,,X,,X,,X,,X
+CAN system type ,21,22,23,24,1,2,3,4
+,,,,,,,,
+NOTES,,,,,,,,
+"This chart comes from the 2013 Service Manual, LAN section, page 25",,,,,,,,
+"It determines the CAN system type, which corresponds to the installed CAN modules",,,,,,,,
+"This spreadsheet was developed on a 2013 Nismo 370Z Coupe, 6 speed manual, no navigation (type 21)",,,,,,,,

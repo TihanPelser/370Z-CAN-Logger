@@ -1,0 +1,26 @@
+Signal name/Connecting unit,ECM,BCM,HVAC,M&A,STRG,TCM,ABS,IPDM-E/R,Unnamed: 9,Unnamed: 10
+Clutch Switch Signal,T,R,,,,,,,,NOTES
+S-Mode Operation Signal,T,,,R,,,,,,"This chart comes from searching the 2013 Service Manual sections for ""CAN"" and collecting all the signal names referenced"
+AC Cut Control Signal,T,,,,,,,R,,These are not located in the generic table from the LAN section chart (Signals sheet).
+Left Turn Signal Indicator Lamp,,T,,R,,,,,,It's sorted according to sending/receving units to hopefully group together signals that will show up in the same CAN message
+Right Turn Signal Indicator Lamp,,T,,R,,,,,,"AV & C/ROOF have been left out because they do not apply to my Z, but Z's with navigation or soft tops will see these signals"
+Tire Pressure,,T,,R,,,,,,
+"Tail Lamp Indicator lamp (position light request, rear lights)",,T,,R,,,,,,
+Pushbutton Ignition Switch Signal,,T,,,,,,R,,
+S-Mode Switch Operation,R,,,T,,,,,,
+Rotation Amount,,,,,T,,R,,,
+Angular Velocity,,,,,T,,R,,,
+Transmission Check Warning Lamp Signal (maybe A/T only),,,,R,,T,,,,
+A/T Check Indicator Lamp Signal (A/T Only),,,,R,,T,,,,
+A/T Fluid Warning Indicator Lamp Signal (A/T Only),,,,R,,T,,,,
+Vehicle Speed,R,,,,,T,,,,
+TCS Malfunction Information,R,,,,,,T,,,
+VDC/TCS Operation Command,R,,,,,,T,,,
+Wake Up Signal,,R,,,,,,T,,
+Throttle Position Signal (0.0/8?),,,,,,,,,,
+"Electrical Load Signal (headlight, defogger, or heater fan ON)",,,,,,,,,,
+Tow Mode Switch Signal,,,,,,,,,,
+1 Position Switch Signal (A/T Only),,,,,,,,,,
+Overdrive Control Switch Signal (A/T Only),,,,,,,,,,
+Power Mode Signal (A/T Only),,,,,,,,,,
+Control Shaft Actual Angle (probably not on main CAN lines),R,,,,,,,,,
