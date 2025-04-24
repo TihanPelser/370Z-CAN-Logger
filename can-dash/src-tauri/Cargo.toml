@@ -1,0 +1,42 @@
+[package]
+name = "can-dash"
+version = "0.1.0"
+description = "370Z CAN Bus Data Visualization"
+authors = ["you"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "can_dash_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+socketcan = { version = "1.7", optional = true }
+chrono = "0.4"
+log = "0.4"
+env_logger = "0.10"
+rand = "0.8"
+
+[features]
+default = []
+# Enable the socketcan feature on Linux platforms
+socketcan_support = ["socketcan"]
+# Enable mock data when we don't have access to real CAN bus
+mock_data = []
+
+# By default enable mock data for development
+[target.'cfg(debug_assertions)'.features]
+default = ["mock_data"]
+

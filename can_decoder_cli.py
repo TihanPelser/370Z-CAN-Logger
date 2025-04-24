@@ -600,7 +600,7 @@ def _replay_without_curses(messages, db_path, replay_speed):
         monitor.close()
 
 
-def monitor_serial(port=DEFAULT_PORT, baudrate=DEFAULT_BAUD, use_curses=True, db_path=DEFAULT_DB_PATH):
+def monitor_serial(port=DEFAULT_PORT, baudrate=DEFAULT_BAUD, use_curses=True, db_path=DEFAULT_DB_PATH, session_name=None):
     """Monitor CAN messages from a serial port"""
     parser = CANMessageParser()
     reader = CANSerialReader(port, baudrate, parser=parser)
@@ -614,17 +614,18 @@ def monitor_serial(port=DEFAULT_PORT, baudrate=DEFAULT_BAUD, use_curses=True, db
     
     if use_curses:
         # Initialize curses and run the monitor
-        curses.wrapper(lambda screen: _monitor_with_curses(screen, reader, db_path))
+        curses.wrapper(lambda screen: _monitor_with_curses(screen, reader, db_path, session_name))
     else:
         # Run in simple console mode
-        _monitor_without_curses(reader, db_path)
+        _monitor_without_curses(reader, db_path, session_name)
     
     reader.stop()
 
 
-def _monitor_with_curses(screen, reader, db_path):
+def _monitor_with_curses(screen, reader, db_path, session_name):
     """Monitor with curses interface"""
     monitor = CANMonitor(screen, db_path)
+    monitor.session_id = session_name
     
     # Hide cursor and set nodelay mode for non-blocking input
     curses.curs_set(0)
@@ -655,9 +656,10 @@ def _monitor_with_curses(screen, reader, db_path):
         monitor.close()
 
 
-def _monitor_without_curses(reader, db_path):
+def _monitor_without_curses(reader, db_path, session_name):
     """Monitor without curses interface"""
     monitor = CANMonitor(screen=None, db_path=db_path)
+    monitor.session_id = session_name
     
     try:
         while True:
@@ -748,22 +750,28 @@ def main():
     # Export option
     parser.add_argument('-e', '--export', help='Export file to CSV (specify output path)')
     
+    # Session name option
+    parser.add_argument('--session-name', help='Custom session name for database logging')
+
     args = parser.parse_args()
-    
+
     # Handle export mode
     if args.export and args.file:
         export_to_csv(args.file, args.export)
         return
-    
+
     # Set database path
     db_path = None if args.no_db else args.database
-    
+
+    # Set session name
+    session_name = args.session_name if args.session_name else datetime.now().strftime("%Y%m%d_%H%M%S")
+
     # Monitor based on input source
     try:
         if args.file:
             monitor_file(args.file, not args.console, db_path, args.replay_speed)
         elif args.serial:
-            monitor_serial(args.port, args.baud, not args.console, db_path)
+            monitor_serial(args.port, args.baud, not args.console, db_path, session_name)
     except KeyboardInterrupt:
         print("\nProgram interrupted by user.")
 
